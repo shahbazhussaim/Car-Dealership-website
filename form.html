@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Registration</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .grid {
+            display: grid;
+            place-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 500px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        fieldset {
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        legend {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        .input, .textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .flex {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .submit-button, .delete-button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .submit-button:hover, .delete-button:hover {
+            background-color: #218838;
+        }
+
+        .delete-button {
+            background-color: #dc3545;
+        }
+
+        .delete-button:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Registration Form -->
+    <form action="backend.php" method="POST">
+        <div class="grid">
+            <div class="content">
+                <h1>Complete Registration</h1>
+                
+                <!-- Registration Section -->
+                <legend>Registration</legend>
+                <fieldset>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your name" class="input">
+                    <br>
+                    <label for="username">Phone:</label>
+                    <input type="text" id="username" name="username" required placeholder="Enter your Phone no." class="input">
+                    <br><br>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email" class="input">
+                </fieldset>
+                <br>
+
+                <!-- More Details Section -->
+                <legend>More Details</legend>
+                <fieldset>
+                    <label for="city">CNIC:</label>
+                    <input type="text" id="city" name="city" required placeholder="Enter your CNIC" class="input">
+                    <br><br>
+                    
+                    <label>Gender:</label>
+                    <div class="flex">
+                        <input type="radio" id="male" name="gender" value="male" checked>
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <br>
+                    
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" placeholder="Enter your full address" class="textarea" style="resize: none;" required></textarea>
+                </fieldset>
+                <br>
+
+                <!-- Payment Details Section -->
+                <legend>Payment Method</legend>
+                <fieldset>
+                    <div class="flex">
+                        <input type="radio" id="cashOnDelivery" name="paymentMethod" value="Cash" checked>
+                        <label for="cashOnDelivery">Cash on Delivery</label>
+                    </div>
+                    <br>
+                    <div class="flex">
+                        <input type="radio" id="onlineTransfer" name="paymentMethod" value="Online">
+                        <label for="onlineTransfer">Online Transfer</label>
+                    </div>
+                </fieldset>
+                <br>
+
+                <!-- Submit Button -->
+                <div>
+                    <button type="submit" name="action" value="register" class="submit-button"><h3>Submit</h3></button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+   
+</body>
+</html>
